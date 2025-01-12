@@ -2,7 +2,7 @@
 import {
   Form,
   FormControl,
-  
+
   FormField,
   FormItem,
   FormLabel,
@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/select"
 import { Input } from "@/components/ui/input"
 import formSchema from "@/schemas/formSchema";
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { useForm } from 'react-hook-form';
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -48,7 +48,7 @@ const Page = ({ }) => {
       gender: "Select Gender",
       contactNumber: "",
       yearOfStudy: "Select Year",
-      branch: "Select Branch",
+      branch: "",
       links: {
         resume: "",
         github: "",
@@ -78,9 +78,8 @@ const Page = ({ }) => {
         title: "Form is Submitted",
         description: "Your form is Submitted Successfully"
       });
-
-      setLoader(false);
-      redirect("/")
+      setLoader((prev)=>(prev=false));
+      redirect("/completed")
 
     }
     else {
