@@ -1,4 +1,4 @@
-import { mongo, Schema } from "mongoose";
+import {Schema } from "mongoose";
 import mongoose from "mongoose";
 
 

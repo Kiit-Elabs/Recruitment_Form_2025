@@ -1,5 +1,5 @@
 "use client";
-import React, { useId, useMemo } from "react";
+import React, { useId } from "react";
 import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import type { Container, SingleOrMultiple } from "@tsparticles/engine";
@@ -18,6 +18,7 @@ type ParticlesProps = {
   particleColor?: string;
   particleDensity?: number;
 };
+
 export const SparklesCore = (props: ParticlesProps) => {
   const {
     id,
@@ -39,6 +40,8 @@ export const SparklesCore = (props: ParticlesProps) => {
   }, []);
   const controls = useAnimation();
 
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
   const particlesLoaded = async (container?: Container) => {
     if (container) {
       controls.start({

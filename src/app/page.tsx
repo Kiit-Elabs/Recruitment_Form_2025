@@ -2,7 +2,7 @@
 import {
   Form,
   FormControl,
-  FormDescription,
+  
   FormField,
   FormItem,
   FormLabel,
@@ -17,20 +17,19 @@ import {
 } from "@/components/ui/select"
 import { Input } from "@/components/ui/input"
 import formSchema from "@/schemas/formSchema";
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { useForm } from 'react-hook-form';
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Button } from "@/components/ui/button";
 import axios from "axios";
 import { useToast } from '@/hooks/use-toast'
-import { Loader2, Router } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { redirect } from "next/navigation"
-import { SparklesCore } from "@/components/ui/sparkles";
 import { SparklesPreview } from "@/components/SparklesPreview";
 
 
-const page = ({ }) => {
+const Page = ({ }) => {
 
   const [loader, setLoader] = useState<boolean>(false)
 
@@ -80,7 +79,7 @@ const page = ({ }) => {
         description: "Your form is Submitted Successfully"
       });
 
-      setLoader((prev) => (prev = false));
+      setLoader(false);
       redirect("/")
 
     }
@@ -377,6 +376,6 @@ const page = ({ }) => {
   )
 }
 
-export default page;
+export default Page;
 
 

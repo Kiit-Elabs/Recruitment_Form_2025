@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
         })
     } catch (error) {
         return NextResponse.json({
-            message: "Candidate Data Not Saved",
+            message: `Candidate Data Not Saved ${error}`,
             success: false
         })
     }
